@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="attendanceManagement.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Learn</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Lora font to the whole document */
+        body {
+            font-family: 'Lora', serif;
+        }
+
+        /* Custom Styles */
+        header {
+            background-color: #f8f9fa; /* Light background */
+            padding: 3rem 0;
+        }
+
+        .company-logo {
+            width: 100%; /* Make logo fill the section width */
+            height: auto;
+        }
+
+        /* Apply fade-in effect for the image */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for headings */
+        .fade-in-heading {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        /* New sections for navigation */
+        .nav-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-section:hover {
+            transform: translateY(-5px);
+            background-color: #646468;
+        }
+
+        /* Icon styling */
+        .nav-section i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Icon hover effect */
+        .nav-section:hover i {
+            color: #f8f67c; /* Change to a custom color on hover */
+            transform: scale(1.2); /* Slightly increase size on hover */
+        }
+
+        /* Style for headings within sections */
+        .nav-section h5 {
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for heading text */
+        .nav-section:hover h5 {
+            color: #17a2b8;
+        }
+    </style>
+   </head>
+<body>
+    <!-- Navigation Bar with Dropdown -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #f8f67c;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Other Links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="studentManagement.html">Student Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="trainerManagement.html">Trainer and Staffs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="coursesManagement.html">Courses and Curriculum</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="courseOverview.html">Update Courses Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courseStatus.html">Update Courses Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="attendanceManagement.html">Update Attendance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="feesManagement.html">Update Fees Due</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exam.html">Update Exam Details</Details></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="progress.html">Update Progress</a>
+                </li>
+               
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Company Logo Only -->
+<header class="text-dark py-5" style="background-color: #ffffff;">
+    <div class="lcontainer fade-in text-center">
+        <img src="header.jpeg" alt="VLGE Institute Logo" class="company-logo mb-3" />
+    </div>
+</header>
+<!-- Include Bootstrap JS and dependencies (optional for form functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Student Progress Tracker</h1>
+        <div class="card p-4 shadow">
+            <form id="progressForm">
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Student Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter student's email" required>
+                </div>
+
+                <!-- Assessments -->
+                <h5>Assessment Marks</h5>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="weeklyAssessment" class="form-label">Weekly Assessment (10):</label>
+                        <input type="number" id="weeklyAssessment" name="weeklyAssessment" class="form-control" max="10" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="monthlyAssessment" class="form-label">Monthly Assessment (10):</label>
+                        <input type="number" id="monthlyAssessment" name="monthlyAssessment" class="form-control" max="10" required>
+                    </div>
+                </div>
+
+                <!-- Practical Exam -->
+                <div class="mb-3">
+                    <label for="practicalExam" class="form-label">Practical Exam (30):</label>
+                    <input type="number" id="practicalExam" name="practicalExam" class="form-control" max="30" required>
+                </div>
+
+                <!-- Final Exam -->
+                <div class="mb-3">
+                    <label for="finalExam" class="form-label">Overall Final Exam (50):</label>
+                    <input type="number" id="finalExam" name="finalExam" class="form-control" max="50" required>
+                </div>
+
+                <!-- Grade and Total -->
+                <div class="mb-3">
+                    <label for="totalMarks" class="form-label">Total Marks:</label>
+                    <input type="text" id="totalMarks" class="form-control" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="grade" class="form-label">Grade:</label>
+                    <input type="text" id="grade" class="form-control" readonly>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Save Progress</button>
+                </div>
+            </form>
+        </div>
+        <div id="message" class="mt-4 text-center"></div>
+    </div>
+    <script src="progress.js" defer></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

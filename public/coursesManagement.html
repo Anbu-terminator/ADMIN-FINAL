@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="attendanceManagement.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Learn</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Lora font to the whole document */
+        body {
+            font-family: 'Lora', serif;
+        }
+
+        /* Custom Styles */
+        header {
+            background-color: #f8f9fa; /* Light background */
+            padding: 3rem 0;
+        }
+
+        .company-logo {
+            width: 100%; /* Make logo fill the section width */
+            height: auto;
+        }
+
+        /* Apply fade-in effect for the image */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for headings */
+        .fade-in-heading {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        /* New sections for navigation */
+        .nav-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-section:hover {
+            transform: translateY(-5px);
+            background-color: #646468;
+        }
+
+        /* Icon styling */
+        .nav-section i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Icon hover effect */
+        .nav-section:hover i {
+            color: #f8f67c; /* Change to a custom color on hover */
+            transform: scale(1.2); /* Slightly increase size on hover */
+        }
+
+        /* Style for headings within sections */
+        .nav-section h5 {
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for heading text */
+        .nav-section:hover h5 {
+            color: #17a2b8;
+        }
+    </style>
+   </head>
+<body>
+    <!-- Navigation Bar with Dropdown -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #f8f67c;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Other Links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="studentManagement.html">Student Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="trainerManagement.html">Trainer and Staffs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="coursesManagement.html">Courses and Curriculum</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="courseOverview.html">Update Courses Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courseStatus.html">Update Courses Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="attendanceManagement.html">Update Attendance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="feesManagement.html">Update Fees Due</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exam.html">Update Exam Details</Details></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="progress.html">Update Progress</a>
+                </li>
+               
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Company Logo Only -->
+<header class="text-dark py-5" style="background-color: #ffffff;">
+    <div class="lcontainer fade-in text-center">
+        <img src="header.jpeg" alt="VLGE Institute Logo" class="company-logo mb-3" />
+    </div>
+</header>
+<style>
+    /* Customizing Icon Colors */
+    .icon {
+      color: #007bff; /* Default color for icons */
+      transition: color 0.3s ease; /* Smooth color transition for hover */
+    }
+  
+    /* Hover Effect for Icons */
+    .icon:hover {
+      color: #28a745; /* Color when hovered (green) */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+  
+    /* Styling Buttons and Aligning them */
+    .button-container {
+      display: flex;
+      justify-content: center; /* Centers the buttons horizontally */
+      gap: 1rem; /* Adds space between buttons */
+      margin-top: 20px; /* Adds top margin for spacing */
+    }
+  
+    .btn {
+      padding: 10px 5px; /* Adds padding inside buttons */
+      background-color: #007bff; /* Button background color */
+      color: rgb(255, 254, 254); /* Text color inside buttons */
+      border: none; /* Remove border */
+      border-radius: 5px; /* Rounded corners */
+      font-size: 1rem; /* Font size */
+      transition: background-color 0.3s ease, transform 0.2s ease; /* Button transition effects */
+    }
+  
+    .btn:hover {
+      background-color: #f8f67c; /* Darker blue for hover effect */
+      transform: scale(1.05); /* Slight scale effect on hover */
+    }
+  
+    /* Aligning the cards (if you use buttons inside them) */
+.card {
+  text-align: center; /* Centers content in cards */
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa; /* Light grey background */
+  color: #333; /* Default text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Ensures cards remain the same width */
+  max-width: 300px; /* Controls maximum width for each card */
+  margin: 10px auto; /* Centers each card and adds spacing */
+}
+
+/* Center alignment for content in .card-body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover Effect with Color and Zoom-In Transformation */
+.card:hover {
+  background-color: #f8f67c; /* Blue background on hover */
+  color: #222220; /* White text color on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+  transform: scale(1.05); /* Zooms in by 5% on hover */
+}
+
+/* Ensuring consistent size across different cards */
+.card {
+  min-height: 200px; /* Set a fixed minimum height */
+  box-sizing: border-box;
+}
+
+  </style>
+  
+<!-- Navigation Buttons -->
+<div class="container my-4 text-center">
+    <button class="btn btn-primary mx-2" onclick="scrollToSection('software')">Software</button>
+    <button class="btn btn-secondary mx-2" onclick="scrollToSection('hardware')">Hardware</button>
+    <button class="btn btn-success mx-2" onclick="scrollToSection('graphical')">Graphical</button>
+    <button class="btn btn-danger mx-2" onclick="scrollToSection('multimedia')">Multimedia</button>
+    <button class="btn btn-warning mx-2" onclick="scrollToSection('management')">Management</button>
+    <button class="btn btn-info mx-2" onclick="scrollToSection('beauty-wellness')">Beatusian</button>
+</div>
+
+<!-- Software Section -->
+<section id="software" class="container my-5">
+    <h2 class="text-info"><b>SOFTWARE</b></h2>
+    <div class="row">
+        <!-- Software Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-code-slash" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Java Developer</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master Java for developing scalable applications.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-code-slash" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Python Developer</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn Python for versatile software solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-braces" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Java Fullstack Developer</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop full-stack apps with Java backend and frontend skills.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-braces" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Python Fullstack Developer</h5>
+                    <p class="card-text">Duration: 2-4 months<br>End-to-end web development using Python frameworks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-cpu" style="font-size: 2rem;" ></i>
+                    <h5 class="card-title">React.js Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create interactive UIs with React.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-node-plus" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Node.js Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Build server-side applications with Node.js.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-globe" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Django Web Framework</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop robust web applications with Django.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-phone" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Android App Development (Java/Kotlin)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn to create Android apps using Java and Kotlin.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-phone" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Flutter App Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Build cross-platform mobile applications with Flutter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-bar-chart-line" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Data Science with Python</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Analyze and interpret complex data with Python.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-robot" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Artificial Intelligence (AI) for Software Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Integrate AI capabilities into software solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-link-45deg" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Blockchain Development Fundamentals</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Understand blockchain technology and development.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-lightning-charge" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Quantum Computing Basics for Programmers</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Dive into quantum computing principles for programmers.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-camera-reels" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Augmented Reality (AR) and Virtual Reality (VR) Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create immersive experiences with AR/VR.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-cloud" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Edge Computing and IoT Integration</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Integrate IoT and edge computing for smart solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hardware Section -->
+<section id="hardware" class="container my-5">
+    <h2 class="text-info"><b>HARDWARE</b></h2>
+    <div class="row">
+        <!-- Hardware Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-building" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Industrial IoT (IIoT) and Smart Manufacturing</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Integrate IoT for optimizing industrial processes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-pc-display" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Advanced VLSI Design and Fabrication</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn advanced VLSI techniques for efficient chip design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-motherboard" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Embedded Systems for Industrial Automation</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop embedded systems for automated solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-diagram-3" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Sensor Networks and Data Acquisition</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master sensor networks for real-time data collection.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-diagram-2-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">FPGA Design for High-Speed Processing</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn FPGA programming for fast, efficient systems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-plug-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Power Electronics for Renewable Energy Systems</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Apply power electronics for sustainable energy solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-bar-chart-line-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Microelectromechanical Systems (MEMS) Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design miniature mechanical systems for diverse uses.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-car-front-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Automotive Electronics and Diagnostics</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Gain expertise in automotive electronic systems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-robot" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Robotics and Automation in Manufacturing</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn robotic systems for industrial automation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-watch" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Real-Time Operating Systems (RTOS) for Embedded Applications</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Build RTOS-based embedded solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-battery-half" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Electric Vehicle (EV) Battery Management Systems</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master BMS for optimal electric vehicle performance.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-wifi" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Industrial Communication Protocols (e.g., Modbus, CAN, Profibus)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master protocols for industrial communication.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Thermal Management in Electronics</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn techniques to manage heat in electronics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock-fill" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Cybersecurity for Industrial Control Systems</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Secure industrial systems against cyber threats.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-soundwave" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Advanced Signal Processing for Industrial Applications</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Process industrial data with advanced techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Design Section -->
+<section id="design" class="container my-5">
+    <h2 class="text-info"><b>DESIGN</b></h2>
+    <div class="row">
+        <!-- Design Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-cube" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">3D Modeling and Animation</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn to create 3D models and animations for various media.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-palette" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Adobe Creative Suite Mastery</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master Adobe tools for graphic design, video editing, and more.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-play-btn" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Motion Graphics and Video Editing</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create stunning motion graphics and edit professional videos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-ui-checks-grid" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">UI/UX Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design user-friendly interfaces and enhance user experiences.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-code-slash" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Web Design and Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn both the design and development aspects of web creation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-vr" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Virtual Reality (VR) and Augmented Reality (AR) Graphics</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create immersive VR and AR graphics for innovative applications.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-controller" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Game Design and Development</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design and develop interactive games with unique graphics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-patch-check" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Branding and Identity Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop a cohesive brand identity through effective design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-box-seam" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Packaging Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design packaging that is both functional and visually appealing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-brush" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Digital Illustration and Concept Art</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop digital illustrations and concept art for various media.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-building" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">3D Rendering and Visualization for Architecture</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create detailed architectural renderings for visual presentations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-printer" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Print Design and Prepress</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn print design techniques and prepress preparation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-laptop" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Interactive Media and Web Graphics Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create engaging graphics for interactive and web-based media.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-megaphone" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Digital Advertising Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design impactful digital advertisements for online platforms.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-fonts" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Typography and Text-Based Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore typography and design text-focused visuals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Multimedia Section -->
+<section id="multimedia" class="container my-5">
+    <h2 class="text-info"><b>MULTIMEDIA</b></h2>
+    <div class="row">
+        <!-- Multimedia Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-camera-video" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Multimedia Production and Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn the fundamentals of multimedia production and design.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-cube" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">3D Animation and Visual Effects (VFX)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create realistic animations and visual effects.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-scissors" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Video Production and Editing</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master video production with Premiere Pro, Final Cut Pro, etc.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-soundwave" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Sound Design and Audio Engineering</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore sound design and engineering for multimedia projects.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-grid" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Interactive Media Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design interactive media for engaging user experiences.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-controller" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Game Development and Interactive Multimedia</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop games and interactive multimedia projects.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-slash-circle" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Motion Graphics and Animation (After Effects)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create motion graphics and animations with After Effects.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-vr" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">VR and AR Production</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn production techniques for VR and AR experiences.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-film" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Digital Film Making and Cinematography</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Study digital filmmaking techniques and cinematography.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-ui-radios" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Web and Mobile App Design (UI/UX)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design engaging user interfaces for web and mobile apps.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-camera" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Digital Photography and Imaging</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Enhance skills in digital photography and image editing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-broadcast" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Broadcast Media Production</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Produce content for radio, TV, and online broadcasting.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-bullhorn" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Digital Advertising and Branding</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Create advertisements and build brand identity.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-journal-bookmark" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">E-learning and Educational Multimedia Design</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Design multimedia for e-learning and educational content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-gear" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">AR and VR Design for Multimedia</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn design techniques for AR and VR in multimedia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Management Section -->
+<section id="management" class="container my-5">
+    <h2 class="text-info"><b>MANAGEMENT</b></h2>
+    <div class="row">
+        <!-- Management Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-award" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Project Management (PMP Certification)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Prepare for PMP certification and gain project management skills.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-gear-wide" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Operations Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn the essentials of managing business operations effectively.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-truck" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Supply Chain Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master logistics and supply chain management strategies.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-briefcase" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Business Administration (MBA)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Study core principles of business administration and management.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-bar-chart-line" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Lean Management and Six Sigma</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn lean principles and Six Sigma techniques for quality improvement.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-diagram-2" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Strategic Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop skills for strategic planning and competitive analysis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-lightbulb" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Entrepreneurship and Innovation Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore strategies for fostering innovation and entrepreneurship.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-currency-dollar" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Financial Management and Accounting</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn financial principles and accounting for business management.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-people" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Human Resource Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Study effective practices in HR management and employee relations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-megaphone" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Marketing Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master marketing strategies and consumer engagement tactics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-check2-square" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Quality Management and Control</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Implement quality control measures for better product outcomes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Risk Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Identify and mitigate risks within business operations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-arrow-repeat" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Change Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn strategies for managing organizational change effectively.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-box-seam" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Product Management</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop skills to oversee the lifecycle of a product.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-flag" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Corporate Governance and Ethics</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Study the principles of corporate governance and business ethics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Beauty and Wellness Section -->
+<section id="beauty-wellness" class="container my-5">
+    <h2 class="text-info"><b>BEAUTY AND WELLNESS</b></h2>
+    <div class="row">
+        <!-- Beauty and Wellness Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-palette" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Professional Makeup Artistry</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master professional makeup techniques for various occasions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-scissors" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Hair Cutting, Styling, and Coloring Techniques</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn advanced hair styling, cutting, and coloring techniques.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-brush" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Nail Art and Nail Technician Certification</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Become a certified nail technician with artistic nail skills.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-heart" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Facial and Skincare Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore facial techniques and advanced skincare treatments.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-stars" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Advanced Bridal and Special Occasion Makeup</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Specialize in bridal and event makeup for memorable looks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-heart-pulse" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Body Massage Therapy and Spa Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn therapeutic massage techniques for relaxation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-scissors" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Waxing and Hair Removal Techniques</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Gain expertise in waxing and professional hair removal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-eye" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Eyebrow Shaping and Eyelash Extensions</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn eyebrow and eyelash styling for enhanced looks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-shop" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Salon Management and Operations</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Understand salon business management and customer service.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-people" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Beauty and Wellness Consultation</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop consulting skills for personalized beauty advice.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-emoji-smile" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Cosmetology and Skin Care Fundamentals</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master the fundamentals of cosmetology and skin care.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-droplet" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Permanent Makeup (Microblading, Microshading)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Get trained in permanent makeup applications.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-flower3" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Aromatherapy and Essential Oil Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn the art of aromatherapy and essential oil uses.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-activity" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Anti-aging Skin Treatments and Techniques</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Discover anti-aging methods to rejuvenate skin.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-hand-index-thumb" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Body Contouring and Slimming Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore body contouring and slimming techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Beauty and Wellness Section -->
+<section id="beauty-wellness" class="container my-5">
+    <h2 class="text-secondary">Beauty and Wellness</h2>
+    <div class="row">
+        <!-- Beauty and Wellness Courses -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-palette" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Professional Makeup Artistry</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master professional makeup techniques for various occasions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-scissors" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Hair Cutting, Styling, and Coloring Techniques</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn advanced hair styling, cutting, and coloring techniques.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-brush" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Nail Art and Nail Technician Certification</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Become a certified nail technician with artistic nail skills.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-heart" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Facial and Skincare Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore facial techniques and advanced skincare treatments.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-stars" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Advanced Bridal and Special Occasion Makeup</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Specialize in bridal and event makeup for memorable looks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-heart-pulse" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Body Massage Therapy and Spa Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn therapeutic massage techniques for relaxation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-scissors" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Waxing and Hair Removal Techniques</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Gain expertise in waxing and professional hair removal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-eye" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Eyebrow Shaping and Eyelash Extensions</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn eyebrow and eyelash styling for enhanced looks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-shop" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Salon Management and Operations</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Understand salon business management and customer service.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-people" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Beauty and Wellness Consultation</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Develop consulting skills for personalized beauty advice.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-emoji-smile" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Cosmetology and Skin Care Fundamentals</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Master the fundamentals of cosmetology and skin care.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-droplet" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Permanent Makeup (Microblading, Microshading)</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Get trained in permanent makeup applications.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-flower3" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Aromatherapy and Essential Oil Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Learn the art of aromatherapy and essential oil uses.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-activity" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Anti-aging Skin Treatments and Techniques</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Discover anti-aging methods to rejuvenate skin.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="bi bi-hand-index-thumb" style="font-size: 2rem;"></i>
+                    <h5 class="card-title">Body Contouring and Slimming Treatments</h5>
+                    <p class="card-text">Duration: 2-4 months<br>Explore body contouring and slimming techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<button onclick="topFunction()" id="goTopBtn" title="Go to top">
+    <i class="fa fa-chevron-up"></i>
+</button>
+
+
+<style>/* Go to Top Button Style */
+    #goTopBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Place it at the bottom of the page */
+        right: 20px; /* Place it on the right side */
+        z-index: 99; /* Make sure it stays on top */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #555; /* Gray background */
+        color: white; /* Text color */
+        cursor: pointer; /* Pointer cursor on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 50%; /* Rounded button */
+        font-size: 18px; /* Increase font size */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+    }
+    
+    /* Change background color on hover */
+    #goTopBtn:hover {
+        background-color: #333;
+    }
+    </style>
+    <script>// Get the button
+        const goTopBtn = document.getElementById("goTopBtn");
+        
+        // Show the button when the user scrolls down 100px from the top of the document
+        window.onscroll = function() { scrollFunction() };
+        
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                goTopBtn.style.display = "block";
+            } else {
+                goTopBtn.style.display = "none";
+            }
+        }
+        
+        // Scroll to the top of the document when the button is clicked
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        </script>
+<!-- Bootstrap JS and custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

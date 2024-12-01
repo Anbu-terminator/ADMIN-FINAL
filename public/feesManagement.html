@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="attendanceManagement.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Learn</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Lora font to the whole document */
+        body {
+            font-family: 'Lora', serif;
+        }
+
+        /* Custom Styles */
+        header {
+            background-color: #f8f9fa; /* Light background */
+            padding: 3rem 0;
+        }
+
+        .company-logo {
+            width: 100%; /* Make logo fill the section width */
+            height: auto;
+        }
+
+        /* Apply fade-in effect for the image */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for headings */
+        .fade-in-heading {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        /* New sections for navigation */
+        .nav-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-section:hover {
+            transform: translateY(-5px);
+            background-color: #646468;
+        }
+
+        /* Icon styling */
+        .nav-section i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Icon hover effect */
+        .nav-section:hover i {
+            color: #f8f67c; /* Change to a custom color on hover */
+            transform: scale(1.2); /* Slightly increase size on hover */
+        }
+
+        /* Style for headings within sections */
+        .nav-section h5 {
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        /* Hover effect for heading text */
+        .nav-section:hover h5 {
+            color: #17a2b8;
+        }
+    </style>
+   </head>
+<body>
+    <!-- Navigation Bar with Dropdown -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #f8f67c;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Other Links -->
+                <li class="nav-item">
+                    <a class="nav-link" href="page1.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="studentManagement.html">Student Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="trainerManagement.html">Trainer and Staffs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="coursesManagement.html">Courses and Curriculum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courseOverview.html">Update Courses Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courseStatus.html">Update Courses Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="attendanceManagement.html">Update Attendance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="feesManagement.html">Update Fees Due</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exam.html">Update Exam Details</Details></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="progress.html">Update Progress</a>
+                </li>
+               
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Company Logo Only -->
+<header class="text-dark py-5" style="background-color: #ffffff;">
+    <div class="lcontainer fade-in text-center">
+        <img src="header.jpeg" alt="VLGE Institute Logo" class="company-logo mb-3" />
+    </div>
+</header>
+<!-- Include Bootstrap JS and dependencies (optional for form functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+  <style>
+    body {
+        background-color: #f8f9fa;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        color: #343a40;
+    }
+    .form-container {
+        max-width: 600px;
+        margin: 30px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .form-label {
+        font-weight: bold;
+    }
+    .form-control:focus {
+        box-shadow: 0 0 5px rgba(108, 117, 125, 0.5);
+        border-color: #6c757d;
+    }
+    button[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        font-weight: bold;
+    }
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+<h1>Fees Management</h1>
+<div class="form-container">
+    <form id="addFeeForm">
+        <div class="mb-3">
+            <label for="email" class="form-label">Student Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter student email" required>
+        </div>
+        <div class="mb-3">
+            <label for="DateofBirth" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="DateofBirth" name="DateofBirth" required>
+        </div>
+        <div class="mb-3">
+            <label for="feesDue" class="form-label">Fees Due</label>
+            <input type="number" class="form-control" id="feesDue" name="feesDue" placeholder="Enter fees due" required>
+        </div>
+        <div class="mb-3">
+            <label for="lastPaidDate" class="form-label">Last Paid Date</label>
+            <input type="date" class="form-control" id="lastPaidDate" name="lastPaidDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <h2 class="text-center my-4">All Fees</h2>
+  <div class="container">
+      <div class="table-responsive">
+          <table id="feesTable" class="table table-bordered table-striped table-hover">
+              <thead class="table-dark">
+                  <tr>
+                      <th>Student Email</th>
+                      <th>Date of Birth</th>
+                      <th>Fees Due</th>
+                      <th>Last Paid Date</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+  
+    <tbody>
+      <!-- Fees records will be dynamically inserted here -->
+    </tbody>
+  </table>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+  padding: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+form label, form input, form button {
+  margin: 5px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+  </style>
+
+  <script src="feesManagement.js"></script>
+</body>
+</html>
